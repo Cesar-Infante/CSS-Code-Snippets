@@ -1,88 +1,94 @@
 :root {
-    --background-color: dimgray;
-    --heading-color: lightcoral;
+    --background-color: #111315;
+    --secondary: #fe13b8;
     --text-color: whitesmoke;
 }
 
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family:sans-serif;
+body {
     background-color: var(--background-color);
-    color: var(--text-color)
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+header {
+    text-align: center;
+    margin: 1rem;
+}
+
+header h1 {
+    color: var(--secondary);
+    font-size: 27px;
+}
+
+header p {
+    color: var(--text-color);
+    margin-top: 1rem;
 }
 
 main {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    margin-top: 1%;
-}
-
-.main-header {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 60px;
-}
-
-header {
-    /* display: flex; */
-    flex-direction: column;
-}
-
-h1 {
-    color: var(--heading-color);
-    text-align: center;
-}
-
-header article {
-    text-align: center;
-    position: relative;
+    justify-content: space-evenly;
+    padding: 1rem;
 }
 
 section {
-    position: relative;
-    margin: 35px;
-    padding: 22px;
-    text-align: center;
-    border-style: dotted;
-    border-color: white;
+    border: 2px dotted var(--text-color);
     border-radius: 10px;
+    padding: 1rem;
+    margin: 20px;
+    min-width: 440px;
+    max-width: 440px;
+    max-height: 400px;
 }
 
-h2 {
-    border-style: solid;
-    border-color: white;
-    border-radius: 10px;
+section h2 {
+    color:var(--secondary);
+    border: solid var(--text-color) 1px;
     padding: 5px;
-    color: var(--heading-color);
-    position: relative;
-    bottom: 47px;
+    border-radius: 10px;
+    margin-top: -30px;
+    background-color: var(--background-color);
+    text-align: center;
+    transition: all 0.6s ease-in-out;
 }
 
-.card {
-    flex: 1 0 0;
-    padding: 20px;
-    text-align: center;
-
+section:hover,
+section:hover h2 {
+    box-shadow: inset 0px 0px 8px
+    rgb(224, 76, 229),
+    0 0 15px
+    rgb(208, 21, 164)
 }
 
-p {
-    text-align: center;
-    bottom: 10px;
+section p {
+    color: var(--secondary);
+    font-size: 14px;
+    margin: 12px 0;
+}
+
+section pre {
+     background-image: 
+        linear-gradient(
+        rgba(232, 102, 236, 0.3) 0%,
+        rgba(232, 102, 236, 0.6) 100%
+    );
+    color: var(--text-color);
+    border-radius: 10px;
+    padding: 1rem;
+    min-height: 250px;
+    -webkit-user-select: all;
+    -ms-user-select: all;
+    user-select: all; 
+
 }
 
 footer {
     text-align: center;
     width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    color: var(--secondary);
 }
 
-@media screen and (max-width: 992px) {
-    main,
-    .card {
-        flex-direction: column;
-    }
-}
